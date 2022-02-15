@@ -54,6 +54,7 @@ class MazeBuilder {
                     }
                 }
             });
+            
             // this.parentDiv = document.getElementById(id);
             // if(!this.parentDiv) {
             //   alert("Cannot initialise maze - no element found with id \"" + id + "\"");
