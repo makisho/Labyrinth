@@ -54,7 +54,33 @@ class MazeBuilder {
                     }
                 }
             });
-            
+            this.maze.forEach((row) => {
+                let i = 0;
+                let xdelta = 10;
+                row.forEach((cell) => {
+                    // if(cell) {
+                    //   cellDiv.className = cell.join(" ");
+                    // }
+                    this.cube = MRE.Actor.CreateFromPrefab(this.context, {
+                        // using the data we loaded earlier
+                        firstPrefabFrom: cubeData,
+                        // Also apply the following generic actor properties.
+                        actor: {
+                            name: 'Altspace Cube',
+                            // Parent the glTF model to the text actor, so the transform is relative to the text
+                            // parentId: this.text.id,
+                            transform: {
+                                local: {
+                                    position: { x: xdelta * i, y: -1, z: 0 },
+                                    scale: { x: 0.4, y: 0.4, z: 0.4 }
+                                }
+                            }
+                        }
+                    });
+                    i++;
+                });
+                //container.appendChild(rowDiv);
+            });
             // this.parentDiv = document.getElementById(id);
             // if(!this.parentDiv) {
             //   alert("Cannot initialise maze - no element found with id \"" + id + "\"");
